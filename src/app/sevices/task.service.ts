@@ -32,8 +32,6 @@ export class TaskService {
     }
   ]
 
-  allTasks: Array<ITask> = []
-
   constructor() { }
 
   getId = () => {
@@ -45,6 +43,7 @@ export class TaskService {
   }
 
   idGenerator = this.getId();
+  filter = {filteredName: '', filteredStatus: 'all'};
 
   addTask(task: {status: string, name: string}) {
     this.tasks.push({id: this.idGenerator(), status: task.status, name: task.name});
@@ -58,18 +57,12 @@ export class TaskService {
     this.tasks.find(task => task.id === obj.id)!.status = obj.status;
   }
 
-  filterTasks = (obj: {filteredName: string, filteredStatus: string}) => {
-    if (this.allTasks.length === 0) {
-      this.allTasks = this.tasks.slice();
-    }
-    console.log(this.allTasks)
-    if (obj.filteredStatus === 'all') {
-      this.tasks = this.allTasks
-        .filter(task => task.name.toLowerCase().includes(obj.filteredName.toLowerCase()));
+  filterTasks = (task: ITask) => {
+    if (this.filter.filteredStatus === 'all' || this.filter.filteredStatus === '') {
+      return task.name.toLowerCase().includes(this.filter.filteredName.toLowerCase());
     } else {
-      this.tasks = this.allTasks
-        .filter(task => task.status === obj.filteredStatus);
+      return task.status === this.filter.filteredStatus
+        && task.name.toLowerCase().includes(this.filter.filteredName.toLowerCase());
     }
-
   }
 }

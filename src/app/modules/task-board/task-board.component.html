@@ -1,8 +1,8 @@
 <div>
-  <app-filter (filterTasks)="taskService.filterTasks($event)"></app-filter>
+  <app-filter (filterTasks)="taskService.filter = $event"></app-filter>
 
   <div *ngFor="let task of taskService.tasks">
-    <app-task
+    <app-task *ngIf="taskService.filterTasks(task)"
       [task]="task"
       [deleteTask]="taskService.deleteTaskById"
       (changedStatus)="taskService.editTaskStatus($event)"
