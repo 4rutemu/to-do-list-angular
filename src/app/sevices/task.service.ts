@@ -32,8 +32,18 @@ export class TaskService {
 
   constructor() { }
 
-  addTask(task: ITask) {
-    this.tasks.push(task);
+  getId = () => {
+    let currentId = 4;
+
+    return function () {
+      return currentId++;
+    }
+  }
+
+  idGenerator = this.getId();
+
+  addTask(task: {status: string, name: string}) {
+    this.tasks.push({id: this.idGenerator(), status: task.status, name: task.name});
   }
 
   deleteTaskById = (id: number): void =>{

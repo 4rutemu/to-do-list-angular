@@ -5,5 +5,5 @@
     <option value="done">Done</option>
   </select>
   <input [(ngModel)]="name">
-  <button (click)="createNewTask.emit({id: getId(), status: this.status, name: this.name})">Создать</button>
+  <button (click)="createNewTask.emit({status: this.status, name: this.name})">Создать</button>
 </div>
