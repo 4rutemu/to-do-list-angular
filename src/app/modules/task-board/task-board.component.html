@@ -2,6 +2,6 @@
   <app-new-task (createNewTask)="taskService.addTask($event)"></app-new-task>
 
   <div *ngFor="let task of taskService.tasks">
-    <app-task [task]="task"></app-task>
+    <app-task [task]="task" [deleteTask]="taskService.deleteTaskById"></app-task>
   </div>
 </div>

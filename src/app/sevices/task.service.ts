@@ -36,7 +36,7 @@ export class TaskService {
     this.tasks.push(task);
   }
 
-  deleteTaskById(id: number) {
+  deleteTaskById = (id: number): void =>{
     this.tasks = this.tasks.filter(task => task.id !== id);
   }
 

@@ -13,4 +13,6 @@ export class TaskComponent {
 
   @Input()
   task!: ITask;
+  @Input()
+  deleteTask!: any;
 }

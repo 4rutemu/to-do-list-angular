@@ -10,5 +10,5 @@
   </ng-template>
   <h4>{{task.name}}</h4>
   <button>edit status</button>
-  <button>delete</button>
+  <button (click)="deleteTask(task.id)">delete</button>
 </div>
