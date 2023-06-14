@@ -1,0 +1,14 @@
+<div>
+  <input [(ngModel)]="filteredName">
+  <select [(ngModel)]="filteredStatus">
+    <option value="all">All</option>
+    <option value="common">Common</option>
+    <option value="important">Important</option>
+    <option value="done">Done</option>
+  </select>
+  <button
+    (click)="filterTasks.emit({filteredName: this.filteredName, filteredStatus: this.filteredStatus})"
+  >
+    Сортировать
+  </button>
+</div>

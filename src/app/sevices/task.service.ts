@@ -12,6 +12,8 @@ export interface ITask {
   name: string;
 }
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +31,8 @@ export class TaskService {
       name: 'Kill the ogres'
     }
   ]
+
+  allTasks: Array<ITask> = []
 
   constructor() { }
 
@@ -52,5 +56,20 @@ export class TaskService {
 
   editTaskStatus = (obj: {id: number, status: string}) => {
     this.tasks.find(task => task.id === obj.id)!.status = obj.status;
+  }
+
+  filterTasks = (obj: {filteredName: string, filteredStatus: string}) => {
+    if (this.allTasks.length === 0) {
+      this.allTasks = this.tasks.slice();
+    }
+    console.log(this.allTasks)
+    if (obj.filteredStatus === 'all') {
+      this.tasks = this.allTasks
+        .filter(task => task.name.toLowerCase().includes(obj.filteredName.toLowerCase()));
+    } else {
+      this.tasks = this.allTasks
+        .filter(task => task.status === obj.filteredStatus);
+    }
+
   }
 }

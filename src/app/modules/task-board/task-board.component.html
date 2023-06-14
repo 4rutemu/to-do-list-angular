@@ -1,5 +1,5 @@
 <div>
-  <app-new-task (createNewTask)="taskService.addTask($event)"></app-new-task>
+  <app-filter (filterTasks)="taskService.filterTasks($event)"></app-filter>
 
   <div *ngFor="let task of taskService.tasks">
     <app-task
@@ -7,7 +7,8 @@
       [deleteTask]="taskService.deleteTaskById"
       (changedStatus)="taskService.editTaskStatus($event)"
     >
-
     </app-task>
   </div>
+
+  <app-new-task (createNewTask)="taskService.addTask($event)"></app-new-task>
 </div>

@@ -8,10 +8,5 @@ import {TaskService} from "../../sevices/task.service";
 })
 export class TaskBoardComponent {
   constructor(public taskService: TaskService) {
-
-  }
-
-  print(value: any){
-    console.log(value)
   }
 }

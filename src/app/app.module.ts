@@ -6,6 +6,7 @@ import {TaskModule} from "./modules/task/task.module";
 import { TaskBoardComponent } from './modules/task-board/task-board.component';
 import { NewTaskComponent } from './modules/new-task/new-task.component';
 import {FormsModule} from "@angular/forms";
+import {FilterModule} from "./modules/filter/filter.module";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {FormsModule} from "@angular/forms";
     imports: [
         BrowserModule,
         TaskModule,
-        FormsModule
+        FormsModule,
+        FilterModule
     ],
   providers: [],
   bootstrap: [AppComponent]
