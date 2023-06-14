@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {TaskModule} from "./modules/task/task.module";
+import { TaskBoardComponent } from './modules/task-board/task-board.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TaskBoardComponent
   ],
     imports: [
         BrowserModule,

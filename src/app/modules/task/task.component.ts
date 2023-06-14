@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import {ITask} from "../../sevices/task.service";
+import {STATUSES} from "../../sevices/task.service";
 
 @Component({
   selector: 'app-task',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent {
+  constructor() {
+  }
 
+  @Input()
+  task!: ITask;
 }

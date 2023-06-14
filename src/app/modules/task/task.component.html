@@ -1,5 +1,14 @@
-<div>
-  <h4>task name</h4>
+<div [ngSwitch]="task.status">
+  <ng-template ngSwitchCase="important">
+    <p style="color: orange;">{{task.status}}</p>
+  </ng-template>
+  <ng-template ngSwitchCase="done">
+    <p style="color: gray;">{{task.status}}</p>
+  </ng-template>
+  <ng-template ngSwitchDefault>
+    <p style="color: cornflowerblue;">{{task.status}}</p>
+  </ng-template>
+  <h4>{{task.name}}</h4>
   <button>edit status</button>
   <button>delete</button>
 </div>

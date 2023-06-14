@@ -20,7 +20,7 @@ export class TaskService {
   tasks: Array<ITask> = [
     {
       id: 0,
-      status: STATUSES.COMMON,
+      status: STATUSES.IMPORTANT,
       name: 'Feed the cat'
     }
   ]
@@ -35,7 +35,7 @@ export class TaskService {
     this.tasks = this.tasks.filter(task => task.id !== id);
   }
 
-  editTaskStatus(id: number, status: string) {
-    this.tasks.find(task => task.id === id).status = status;
-  }
+  // editTaskStatus(id: number, status: string) {
+  //   this.tasks.find(task => task.id === id).status = status;
+  // }
 }
