@@ -22,6 +22,11 @@ export class TaskService {
       id: 0,
       status: STATUSES.IMPORTANT,
       name: 'Feed the cat'
+    },
+    {
+      id: 1,
+      status: STATUSES.COMMON,
+      name: 'Kill the ogres'
     }
   ]
 

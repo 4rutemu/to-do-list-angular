@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {TaskModule} from "../task/task.module";
 import {TaskService} from "../../sevices/task.service";
+import {NewTaskModule} from "../new-task/new-task.module";
 
 
 
@@ -9,7 +10,8 @@ import {TaskService} from "../../sevices/task.service";
   declarations: [],
   imports: [
     CommonModule,
-    TaskModule
+    TaskModule,
+    NewTaskModule
   ],
   providers: [
     TaskService

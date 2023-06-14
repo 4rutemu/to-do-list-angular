@@ -10,4 +10,8 @@ export class TaskBoardComponent {
   constructor(public taskService: TaskService) {
 
   }
+
+  print(value: any){
+    console.log(value)
+  }
 }

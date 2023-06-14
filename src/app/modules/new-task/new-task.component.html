@@ -1,0 +1,9 @@
+<div>
+  <select [(ngModel)]="status">
+    <option value="common">Common</option>
+    <option value="important">Important</option>
+    <option value="done">Done</option>
+  </select>
+  <input [(ngModel)]="name">
+  <button (click)="createNewTask.emit({id: getId(), status: this.status, name: this.name})">Создать</button>
+</div>
