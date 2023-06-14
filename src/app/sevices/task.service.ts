@@ -40,7 +40,7 @@ export class TaskService {
     this.tasks = this.tasks.filter(task => task.id !== id);
   }
 
-  // editTaskStatus(id: number, status: string) {
-  //   this.tasks.find(task => task.id === id).status = status;
-  // }
+  editTaskStatus = (obj: {id: number, status: string}) => {
+    this.tasks.find(task => task.id === obj.id)!.status = obj.status;
+  }
 }

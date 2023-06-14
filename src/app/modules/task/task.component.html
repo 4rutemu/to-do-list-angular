@@ -9,6 +9,13 @@
     <p style="color: cornflowerblue;">{{task.status}}</p>
   </ng-template>
   <h4>{{task.name}}</h4>
-  <button>edit status</button>
+
+  <select [(ngModel)]="newStatus">
+    <option value="common">Common</option>
+    <option value="important">Important</option>
+    <option value="done" selected>Done</option>
+  </select>
+  <button (click)="changedStatus.emit({id:task.id, status: this.newStatus})">edit status</button>
+
   <button (click)="deleteTask(task.id)">delete</button>
 </div>
