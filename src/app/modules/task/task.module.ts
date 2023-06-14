@@ -8,6 +8,9 @@ import { TaskComponent } from './task.component';
   declarations: [
     TaskComponent
   ],
+  exports: [
+    TaskComponent
+  ],
   imports: [
     CommonModule
   ]
